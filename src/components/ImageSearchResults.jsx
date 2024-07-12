@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import PaginationButtons from './PaginationButtons';
+import { Suspense } from 'react';
 
 export default function ImageSearchResults({ results }) {
   return (
@@ -30,8 +31,10 @@ export default function ImageSearchResults({ results }) {
           </div>
         ))}
       </div>
-      <div className='ml-16'>
-        <PaginationButtons/>
+      <div className="ml-16">
+        <Suspense>
+          <PaginationButtons />
+        </Suspense>
       </div>
     </div>
   );

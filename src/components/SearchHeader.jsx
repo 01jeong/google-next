@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { Suspense } from 'react';
 import SearchBox from './SearchBox';
 import { RiSettings3Line } from 'react-icons/ri';
 import { TbGridDots } from 'react-icons/tb';
@@ -31,7 +31,9 @@ export default function SearchHeader() {
           Sign in
         </button>
       </div>
-      <SearchHeaderOptions/>
+      <Suspense>
+        <SearchHeaderOptions />
+      </Suspense>
     </header>
   );
 }
